@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .room-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .room-list li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .room-list a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+    <header>
+        <h1>Room Options</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        {% comment %} <a href="/room/">Room</a> {% endcomment %}
+    </nav>
+
+
+    <main>
+        <h2>Select a Room</h2>
+        <ul class="room-list">
+            {% for room in rooms %}
+                <li><a href="/room/{{ room.id }}">{{ room.id }} -- {{ room.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+
+</body>
+</html>
